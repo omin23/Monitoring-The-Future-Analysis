@@ -9,7 +9,10 @@ that surveys 12th, 10th and 8th grade students. As a result, this survey gathers
 behaviors, attitudes, and values of adolescents. The MTF survey has proven instrumental in the development of prevention programmes,
 public health policies and educational campaigns. 
 
-In this study we attempt to develop a classification model that predicts the political leaning of an adolecent 
+In this study, our central question is **How does the quality and quatity of a person's social interations determine thier Political Leaning**. 
+Here we will use Data Analysis processes to identify how ... 
+
+Finally, we will develop a classification model that predicts the political leaning of an adolecent 
 based on the quality and quantity of thier social interations.  
 
 ## Workflow 
