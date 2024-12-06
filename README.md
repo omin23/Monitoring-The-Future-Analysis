@@ -1,13 +1,16 @@
-Authors: [Pheobe](pxyi@umich.edu) and [Omkar](omkarn@umich.edu)
---- 
+
+# Monitoring The Future Analysis
+
+Authors: [Phoebe Yi](pxyi@umich.edu) and [Omkar Nayak](omkarn@umich.edu)
 
 ## Introduction
-In this study we attempt to develop a classification model that predicts the political leaning of an adolecent 
-based on the quality and quantity of thier social interations. Monitoring the Future is a long runing study at 
-the Univerisy of Michigan that surveys 12th,10th and 8th grade students. 
+Monitoring The Future (MTF) is a long runing study conducted by the the Institute of Social Reseach at the Univerisy of Michigan
+that surveys 12th, 10th and 8th grade students. As a result, this survey gathers and maintains critical insights into the 
+behaviors, attitudes, and values of adolescents. The MTF survey has proven instrumental in the development of prevention programmes,
+public health policies and educational campaigns. 
 
-Initially we assume that lonelier peope will tend 
-to vote towards the conservative party in the US. 
+In this study we attempt to develop a classification model that predicts the political leaning of an adolecent 
+based on the quality and quantity of thier social interations.  
 
 ## Workflow 
     1. Reseach symptoms of a lack of quality and healthy quality of social interation, ie. loneliness
