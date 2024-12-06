@@ -1,6 +1,4 @@
 
-# Monitoring The Future Analysis
-
 Authors: [Phoebe Yi](pxyi@umich.edu) and [Omkar Nayak](omkarn@umich.edu)
 
 ## Introduction
