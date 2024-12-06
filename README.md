@@ -23,27 +23,14 @@ the overall state of the person's Social Network.
 
 ### Introduction to Columns 
 
-* <span style="background-color: #a199f7">NumSibilings: </span> A numeric variable that identifies of sibilings one has. It allows us to idetify
-how many poeple of that person's generation they have in thier home life.
-* <span style="background-color: #a199f7">SibilingBool: </span> A boolean variable that identifies if one has sibilings or not. This allows us
-to assess wether simply having sibilings to any capacity changes one's political leaning. 
-* <span style="background-color: #a199f7">NonRelBool: </span> A boolean variable that identifies if one lives with Non-Relatives (nannies, roomate, etc.).
-This allows us to observe how living in palces where a one is lives with Non-Relative(s) affects thier political leaning. 
-* <span style="background-color: #a199f7">FriendSAT: </span> A categorical variable that identifies how satisfied one is with thier friends. This allows
-us to measure one asepct of Social Funtion. 
-* <span style="background-color: #a199f7">ParentSAT: </span> A categorical variable that identifies how satisfied one is with thier parents. This allows
-us to measure one asepct of Social Funtion. 
-* <span style="background-color: #a199f7">TrustPPl: </span> A categorical variable that identifies how one feels abour trusting people . This allows
-us to measure one asepct of Social Funtion. 
-* <span style="background-color: #a199f7">AlcAlone: </span> 
-
-* <span style="background-color: #a199f7">FatherPres: </span>
-
-* <span style="background-color: #a199f7">MotherPres: </span>
-
-* <span style="background-color: #a199f7">Lonely: </span>
-
-* <span style="background-color: #a199f7">NumGoOut: </span>
+* <span style="background-color: #ccc5fc">PolBel: </span> A catagorical variable that indicates one's political leaning. The variable we are trying to predict using our classifier. 
+* <span style="background-color: #ccc5fc">NumSibilings: </span> A numeric variable that identifies of sibilings one has. It allows us to idetify how many poeple of that person's generation they have in thier home life.
+* <span style="background-color: #ccc5fc">BR/SRinhouse: </span> A boolean value that identifies if one has sibilings in thier house. This allows us to see the effect of multiple sibilings. 
+* <span style="background-color: #ccc5fc">FatherPres: </span> A boolean variable that identifies wether thier father is present. This allows us to observe an crucial node is an adolecent's Social Network.  
+* <span style="background-color: #ccc5fc">MotherPres: </span> A boolean variable that identifies wether thier father is present. This allows us to observe an crucial node is an adolecent's Social Network.  
+* <span style="background-color: #ccc5fc">Lonely: </span> A catagorical variable that identifies how lonley one feels. Among all the variables,the one that is direct and clearly associated with this study. 
+* <span style="background-color: #ccc5fc">WishMoreFrinds: </span> A catagorical variable that identfies how strongly one feels about wanting to make more friends. Strongly indicates one's Social Network State.
+* <span style="background-color: #ccc5fc">UsuallyFriends: </span> A catagorical variable that identifies wether one belives they have friends to spend time with. Another strong indicator of how strong the state of one's Social Network is. 
 
 
 
@@ -62,17 +49,17 @@ In order to find appropriate variables for out analysis, we needed to find the r
 to look for in our data. Naturally, this led us to look for symptoms of loneliness. This led 
 us to find the following variables from our data set:
 
-1. NumSibilings - V17
-2. SibilingBool - V18
-3. NonRelBool - V26
-4. FriendSAT - V1646
-5. ParentSAT - V1647
-6. TrustPPl - V1669
-7. AlcAlone - V1217
-8. FatherPres - V155
-9. MotherPres - V156
-10. Lonely - V5313
-11. NumGoOut - V194
+1. PolBel - V5167 
+
+1. NumSibilings - V49 - DS6
+2. BR/SRinhouse - V157(2000 - 2011) - V2157(2012 - 2023) 
+3. FTHRPRES - V155(2000-2011) - V7206(2012-2018) - V5155(2019-2023)
+4. MTHRPRES - V5156(2000-2011) - V7207(2012-2028) - V5156(2019-2023)
+5. Lonely - V5313 
+6. WishMoreFrinds - OFT WSH MOR FRND - V5321
+7. UsuallyFriends - USLY FRDS BE WTH - V5324
+
+
 
 By cross referenceing the total collecetions of symptoms we extracted from out reseach to the
 available questions asked in the overall dataset, we ended our hunt relevant variables with 
