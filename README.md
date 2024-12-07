@@ -53,7 +53,12 @@ Finally, we found 8 relevant variables:
 ### Univaritate Analysis
 #### Political belifs distrobution: 
 
-![Plot 1, Univariate Analysis of Political Belifs](https://github.com/omin23/Monitoring-The-Future-Analysis/blob/main/plot1PB.jpg)
+<iframe
+  src="398_mtf/plot1PB.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 
