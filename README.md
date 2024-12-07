@@ -71,7 +71,7 @@ Cleaned data:
 ### Bivaritate Analysis
 #### Political beliefs distribution compared to reported loneliness:
 <iframe
-  src="assets/plot2HM.html"
+  src="assets/plot2HM.html.html"
   width="800"
   height="600"
   frameborder="0"
