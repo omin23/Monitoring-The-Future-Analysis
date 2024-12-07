@@ -57,64 +57,64 @@ Cleaned data:
 
 <table style="border: 1px solid black; border-collapse: collapse;">
   <tr>
-    <th>RESPONDENT_ID</th>
-    <th>V1_x</th>
-    <th>SEX</th>
-    <th>POL_BELIEFS</th>
-    <th>MOTHR_PRES</th>
-    <th>LONELY</th>
-    <th>WISH_MORE_FRNDS</th>
-    <th>USLLY_FRNDS</th>
+    <th style="border: 1px solid black; padding: 5px;">RESPONDENT_ID</th>
+    <th style="border: 1px solid black; padding: 5px;">V1_x</th>
+    <th style="border: 1px solid black; padding: 5px;">SEX</th>
+    <th style="border: 1px solid black; padding: 5px;">POL_BELIEFS</th>
+    <th style="border: 1px solid black; padding: 5px;">MOTHR_PRES</th>
+    <th style="border: 1px solid black; padding: 5px;">LONELY</th>
+    <th style="border: 1px solid black; padding: 5px;">WISH_MORE_FRNDS</th>
+    <th style="border: 1px solid black; padding: 5px;">USLLY_FRNDS</th>
   </tr>
   <tr>
-    <td>50001</td>
-    <td>2023</td>
-    <td>1.0</td>
-    <td>3.0</td>
-    <td>1.0</td>
-    <td>5.0</td>
-    <td>5.0</td>
-    <td>4.0</td>
+    <th style="border: 1px solid black; padding: 5px;">50001</td>
+    <th style="border: 1px solid black; padding: 5px;">2023</td>
+    <th style="border: 1px solid black; padding: 5px;">1.0</td>
+    <th style="border: 1px solid black; padding: 5px;">3.0</td>
+    <th style="border: 1px solid black; padding: 5px;">1.0</td>
+    <th style="border: 1px solid black; padding: 5px;">5.0</td>
+    <th style="border: 1px solid black; padding: 5px;">5.0</td>
+    <th style="border: 1px solid black; padding: 5px;">4.0</td>
   </tr>
   <tr>
-    <td>50002</td>
-    <td>2023</td>
-    <td>1.0</td>
-    <td>4.0</td>
-    <td>1.0</td>
-    <td>5.0</td>
-    <td>4.0</td>
-    <td>4.0</td>
+    <th style="border: 1px solid black; padding: 5px;">50002</td>
+    <th style="border: 1px solid black; padding: 5px;">2023</td>
+    <th style="border: 1px solid black; padding: 5px;">1.0</td>
+    <th style="border: 1px solid black; padding: 5px;">4.0</td>
+    <th style="border: 1px solid black; padding: 5px;">1.0</td>
+    <th style="border: 1px solid black; padding: 5px;">5.0</td>
+    <th style="border: 1px solid black; padding: 5px;">4.0</td>
+    <th style="border: 1px solid black; padding: 5px;">4.0</td>
   </tr>
   <tr>
-    <td>50005</td>
-    <td>2023</td>
-    <td>0.0</td>
-    <td>0.0</td>
-    <td>1.0</td>
-    <td>3.0</td>
-    <td>1.0</td>
-    <td>1.0</td>
+    <th style="border: 1px solid black; padding: 5px;">50005</td>
+    <th style="border: 1px solid black; padding: 5px;">2023</td>
+    <th style="border: 1px solid black; padding: 5px;">0.0</td>
+    <th style="border: 1px solid black; padding: 5px;">0.0</td>
+    <th style="border: 1px solid black; padding: 5px;">1.0</td>
+    <th style="border: 1px solid black; padding: 5px;">3.0</td>
+    <th style="border: 1px solid black; padding: 5px;">1.0</td>
+    <th style="border: 1px solid black; padding: 5px;">1.0</td>
   </tr>
   <tr>
-    <td>50006</td>
-    <td>2023</td>
-    <td>1.0</td>
-    <td>2.0</td>
-    <td>1.0</td>
-    <td>4.0</td>
-    <td>3.0</td>
-    <td>4.0</td>
+    <th style="border: 1px solid black; padding: 5px;">50006</td>
+    <th style="border: 1px solid black; padding: 5px;">2023</td>
+    <th style="border: 1px solid black; padding: 5px;">1.0</td>
+    <th style="border: 1px solid black; padding: 5px;">2.0</td>
+    <th style="border: 1px solid black; padding: 5px;">1.0</td>
+    <th style="border: 1px solid black; padding: 5px;">4.0</td>
+    <th style="border: 1px solid black; padding: 5px;">3.0</td>
+    <th style="border: 1px solid black; padding: 5px;">4.0</td>
   </tr>
   <tr>
-    <td>50007</td>
-    <td>2023</td>
-    <td>0.0</td>
-    <td>0.0</td>
-    <td>1.0</td>
-    <td>5.0</td>
-    <td>1.0</td>
-    <td>5.0</td>
+    <th style="border: 1px solid black; padding: 5px;">50007</td>
+    <th style="border: 1px solid black; padding: 5px;">2023</td>
+    <th style="border: 1px solid black; padding: 5px;">0.0</td>
+    <th style="border: 1px solid black; padding: 5px;">0.0</td>
+    <th style="border: 1px solid black; padding: 5px;">1.0</td>
+    <th style="border: 1px solid black; padding: 5px;">5.0</td>
+    <th style="border: 1px solid black; padding: 5px;">1.0</td>
+    <th style="border: 1px solid black; padding: 5px;">5.0</td>
   </tr>
 </table>
 
