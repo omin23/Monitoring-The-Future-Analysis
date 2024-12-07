@@ -45,7 +45,7 @@ Because of the nature of this
 #### Political belifs distrobution: 
 
 <iframe
-  src="https://github.com/omin23/Monitoring-The-Future-Analysis/blob/main/assets/plot1PB.html"
+  src="assets/plot1PB.html"
   width="800"
   height="600"
   frameborder="0"
