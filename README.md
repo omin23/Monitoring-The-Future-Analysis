@@ -26,19 +26,36 @@ inspiration from the litrature, we found the following variables from our data s
 the total collecetions of symptoms we extracted to the available questions asked in the overall dataset.
 Finally, we found 8 relevant variables:
 
-* <span style="background-color: #ff8c9c">PolBel: </span> A catagorical variable that indicates one's political leaning. The variable we are trying to predict using our classifier. 
-* <span style="background-color: #ff8c9c">NumSibilings: </span> A numeric variable that identifies of sibilings one has. It allows us to idetify how many poeple of that person's generation they have in thier home life.
-* <span style="background-color: #ff8c9c">BR/SRinhouse: </span> A boolean value that identifies if one has sibilings in thier house. This allows us to see the effect of multiple sibilings. 
-* <span style="background-color: #ff8c9c">FatherPres: </span> A boolean variable that identifies wether thier father is present. This allows us to observe an crucial node is an adolecent's Social Network.  
-* <span style="background-color: #ff8c9c">MotherPres: </span> A boolean variable that identifies wether thier father is present. This allows us to observe an crucial node is an adolecent's Social Network.  
-* <span style="background-color: #ff8c9c">Lonely: </span> A catagorical variable that identifies how lonley one feels. Among all the variables,the one that is direct and clearly associated with this study. 
-* <span style="background-color: #ff8c9c">WishMoreFrinds: </span> A catagorical variable that identfies how strongly one feels about wanting to make more friends. Strongly indicates one's Social Network State.
-* <span style="background-color: #ff8c9c">UsuallyFriends: </span> A catagorical variable that identifies wether one belives they have friends to spend time with. Another strong indicator of how strong the state of one's Social Network is. 
+* <span style="background-color: #ff8c9c80">PolBel: </span> A catagorical variable that indicates one's political leaning. The variable we are trying to predict using our classifier. 
+* <span style="background-color: #ff8c9c80">NumSibilings: </span> A numeric variable that identifies of sibilings one has. It allows us to idetify how many poeple of that person's generation they have in thier home life.
+* <span style="background-color: #ff8c9c80">BR/SRinhouse: </span> A boolean value that identifies if one has sibilings in thier house. This allows us to see the effect of multiple sibilings. 
+* <span style="background-color: #ff8c9c80">FatherPres: </span> A boolean variable that identifies wether thier father is present. This allows us to observe an crucial node is an adolecent's Social Network.  
+* <span style="background-color: #ff8c9c80">MotherPres: </span> A boolean variable that identifies wether thier father is present. This allows us to observe an crucial node is an adolecent's Social Network.  
+* <span style="background-color: #ff8c9c80">Lonely: </span> A catagorical variable that identifies how lonley one feels. Among all the variables,the one that is direct and clearly associated with this study. 
+* <span style="background-color: #ff8c9c80">WishMoreFrinds: </span> A catagorical variable that identfies how strongly one feels about wanting to make more friends. Strongly indicates one's Social Network State.
+* <span style="background-color: #ff8c9c80">UsuallyFriends: </span> A catagorical variable that identifies wether one belives they have friends to spend time with. Another strong indicator of how strong the state of one's Social Network is. 
+* <span style="background-color: #ff8c9c80">Sex: </span> A catagorical variable that identifies the Sex of a responder. This will provide us with some extra general information about the responder. 
+* <span style="background-color: #ff8c9c80">Race: </span>A catagorical variable that identifies the Race of a responder. This will provide us with some extra general information about the responder. 
+
 
 
 ## Data Cleaning and Exploratory Data Analysis
 
-Because of the nature of this 
+Because of the sheer scope and quantity of questions that the MTF survey contains, there are 7 datasets with a few overlaping questions for every year. For the purpouses of this study we needed to use variables located in two distinct datasets but there was no guarentee that the same people provided infromation for dataset 1 would also appear in dataset 6. Fortunately every obeservation in the datasets had a "Responder ID". Using the ID's of each observation, we were able to use merge both datasets using inner join (based on Responder ID) to get a merged people who responded to both the core questions and the extra questions relevant to this study. 
+
+    ```py
+    df1 = pd.read_stata(form1_path)
+    df6 = pd.read_stata(form6_path)
+
+    df_merged = df1.merge(df6, on="RESPONDENT_ID", how="inner")
+    ```
+Once we merged our data, we still retained well over a thousand observations, thus confirming that it is a viable strategy for data collection! After we successfully combined all the data we needed into a single dataframe, we quickly noticed that Sex and Race were often redacted for security purposes. Since it made little sense to impute this information (generally not advised to use imputation in social science research), we decided not to include these two columns in the training of our model. Additionally, by dropping the Sex and Race columns, we clearly focus on a specific responder's Social Network rather than letting the model be influenced by any physiological or cultural differences between responders.
+
+Due to this data being available to the public for academic use and the youth of the responders, many of the responses in critical variables were either unusable or redacted. We see this clearly in variables such as political leaning, where a significant portion of responses was "Unsure," "Blank," or "Redacted." As a result, we dropped the observations that did not give a direct response regarding their political leaning.
+
+Cleaned data: 
+
+
 
 
 ### Univaritate Analysis
@@ -55,5 +72,4 @@ Because of the nature of this
 
 
 ## Model Development 
-Once we had an abundance of variables to works with. 
 
