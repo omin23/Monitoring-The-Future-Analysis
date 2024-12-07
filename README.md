@@ -54,7 +54,6 @@ Once we merged our data, we still retained well over a thousand observations, co
 Due to this data being available to the public for academic use and the youth of the responders, many of the responses in critical variables were either unusable or redacted. We see this clearly in variables such as political leaning, where a significant portion of responses were "Unsure," "Blank," or "Redacted." As a result, we dropped the observations that did not provide a direct response regarding their political leaning.
 
 Cleaned data: 
-
 <table style="border: 1px solid black; border-collapse: collapse;">
   <tr>
     <th style="border: 1px solid black; padding: 5px;">RESPONDENT_ID</th>
@@ -67,54 +66,54 @@ Cleaned data:
     <th style="border: 1px solid black; padding: 5px;">USLLY_FRNDS</th>
   </tr>
   <tr>
-    <th style="border: 1px solid black; padding: 5px;">50001</td>
-    <th style="border: 1px solid black; padding: 5px;">2023</td>
-    <th style="border: 1px solid black; padding: 5px;">1.0</td>
-    <th style="border: 1px solid black; padding: 5px;">3.0</td>
-    <th style="border: 1px solid black; padding: 5px;">1.0</td>
-    <th style="border: 1px solid black; padding: 5px;">5.0</td>
-    <th style="border: 1px solid black; padding: 5px;">5.0</td>
-    <th style="border: 1px solid black; padding: 5px;">4.0</td>
+    <td style="border: 1px solid black; padding: 5px;">50001</td>
+    <td style="border: 1px solid black; padding: 5px;">2023</td>
+    <td style="border: 1px solid black; padding: 5px;">1.0</td>
+    <td style="border: 1px solid black; padding: 5px;">3.0</td>
+    <td style="border: 1px solid black; padding: 5px;">1.0</td>
+    <td style="border: 1px solid black; padding: 5px;">5.0</td>
+    <td style="border: 1px solid black; padding: 5px;">5.0</td>
+    <td style="border: 1px solid black; padding: 5px;">4.0</td>
   </tr>
   <tr>
-    <th style="border: 1px solid black; padding: 5px;">50002</td>
-    <th style="border: 1px solid black; padding: 5px;">2023</td>
-    <th style="border: 1px solid black; padding: 5px;">1.0</td>
-    <th style="border: 1px solid black; padding: 5px;">4.0</td>
-    <th style="border: 1px solid black; padding: 5px;">1.0</td>
-    <th style="border: 1px solid black; padding: 5px;">5.0</td>
-    <th style="border: 1px solid black; padding: 5px;">4.0</td>
-    <th style="border: 1px solid black; padding: 5px;">4.0</td>
+    <td style="border: 1px solid black; padding: 5px;">50002</td>
+    <td style="border: 1px solid black; padding: 5px;">2023</td>
+    <td style="border: 1px solid black; padding: 5px;">1.0</td>
+    <td style="border: 1px solid black; padding: 5px;">4.0</td>
+    <td style="border: 1px solid black; padding: 5px;">1.0</td>
+    <td style="border: 1px solid black; padding: 5px;">5.0</td>
+    <td style="border: 1px solid black; padding: 5px;">4.0</td>
+    <td style="border: 1px solid black; padding: 5px;">4.0</td>
   </tr>
   <tr>
-    <th style="border: 1px solid black; padding: 5px;">50005</td>
-    <th style="border: 1px solid black; padding: 5px;">2023</td>
-    <th style="border: 1px solid black; padding: 5px;">0.0</td>
-    <th style="border: 1px solid black; padding: 5px;">0.0</td>
-    <th style="border: 1px solid black; padding: 5px;">1.0</td>
-    <th style="border: 1px solid black; padding: 5px;">3.0</td>
-    <th style="border: 1px solid black; padding: 5px;">1.0</td>
-    <th style="border: 1px solid black; padding: 5px;">1.0</td>
+    <td style="border: 1px solid black; padding: 5px;">50005</td>
+    <td style="border: 1px solid black; padding: 5px;">2023</td>
+    <td style="border: 1px solid black; padding: 5px;">0.0</td>
+    <td style="border: 1px solid black; padding: 5px;">0.0</td>
+    <td style="border: 1px solid black; padding: 5px;">1.0</td>
+    <td style="border: 1px solid black; padding: 5px;">3.0</td>
+    <td style="border: 1px solid black; padding: 5px;">1.0</td>
+    <td style="border: 1px solid black; padding: 5px;">1.0</td>
   </tr>
   <tr>
-    <th style="border: 1px solid black; padding: 5px;">50006</td>
-    <th style="border: 1px solid black; padding: 5px;">2023</td>
-    <th style="border: 1px solid black; padding: 5px;">1.0</td>
-    <th style="border: 1px solid black; padding: 5px;">2.0</td>
-    <th style="border: 1px solid black; padding: 5px;">1.0</td>
-    <th style="border: 1px solid black; padding: 5px;">4.0</td>
-    <th style="border: 1px solid black; padding: 5px;">3.0</td>
-    <th style="border: 1px solid black; padding: 5px;">4.0</td>
+    <td style="border: 1px solid black; padding: 5px;">50006</td>
+    <td style="border: 1px solid black; padding: 5px;">2023</td>
+    <td style="border: 1px solid black; padding: 5px;">1.0</td>
+    <td style="border: 1px solid black; padding: 5px;">2.0</td>
+    <td style="border: 1px solid black; padding: 5px;">1.0</td>
+    <td style="border: 1px solid black; padding: 5px;">4.0</td>
+    <td style="border: 1px solid black; padding: 5px;">3.0</td>
+    <td style="border: 1px solid black; padding: 5px;">4.0</td>
   </tr>
   <tr>
-    <th style="border: 1px solid black; padding: 5px;">50007</td>
-    <th style="border: 1px solid black; padding: 5px;">2023</td>
-    <th style="border: 1px solid black; padding: 5px;">0.0</td>
-    <th style="border: 1px solid black; padding: 5px;">0.0</td>
-    <th style="border: 1px solid black; padding: 5px;">1.0</td>
-    <th style="border: 1px solid black; padding: 5px;">5.0</td>
-    <th style="border: 1px solid black; padding: 5px;">1.0</td>
-    <th style="border: 1px solid black; padding: 5px;">5.0</td>
+    <td style="border: 1px solid black; padding: 5px;">50007</td>
+    <td style="border: 1px solid black; padding: 5px;">2023</td>
+    <td style="border: 1px solid black; padding: 5px;">0.0</td>
+    <td style="border: 1px solid black; padding: 5px;">0.0</td>
+    <td style="border: 1px solid black; padding: 5px;">1.0</td>
+    <td style="border: 1px solid black; padding: 5px;">5.0</td>
+    <td style="border: 1px solid black; padding: 5px;">1.0</td>
+    <td style="border: 1px solid black; padding: 5px;">5.0</td>
   </tr>
 </table>
 
