@@ -109,6 +109,7 @@ The survey included a vital variable that allowed people to report how lonely th
 ```py
 pivot_table = pd.crosstab(Alonescale, group_of_friends)
 ```
+
 | Alonescale | 1   | 2   | 3   | 4   | 5   |
 |------------|-----|-----|-----|-----|-----|
 | 1          | 28  | 4   | 6   | 7   | 24  |
@@ -116,7 +117,6 @@ pivot_table = pd.crosstab(Alonescale, group_of_friends)
 | 3          | 5   | 10  | 69  | 27  | 28  |
 | 4          | 55  | 84  | 67  | 136 | 63  |
 | 5          | 149 | 75  | 66  | 58  | 60  |
-
 
 
 ## Framing a Prediction Problem
