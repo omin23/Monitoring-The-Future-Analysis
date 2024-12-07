@@ -41,7 +41,7 @@ Finally, we found 8 relevant variables:
 
 ## Data Cleaning and Exploratory Data Analysis
 
-Because of the sheer scope and quantity of questions that the MTF survey contains, there are 7 datasets with a few overlaping questions for every year. For the purpouses of this study we needed to use variables located in two distinct datasets but there was no guarentee that the same people provided infromation for dataset 1 would also appear in dataset 6. Fortunately every obeservation in the datasets had a "Responder ID". Using the ID's of each observation, we were able to use merge both datasets using inner join (based on Responder ID) to get a merged people who responded to both the core questions and the extra questions relevant to this study. 
+Because of the sheer scope and quantity of questions that the MTF survey contains, there are 7 datasets with a few overlapping questions for every year. For the purposes of this study, we needed to use variables located in two distinct datasets, but there was no guarantee that the same people who provided information for dataset 1 would also appear in dataset 6. Fortunately, every observation in the datasets had a "Responder ID." Using the IDs of each observation, we were able to merge both datasets using an inner join (based on Responder ID) to get a merged set of people who responded to both the core questions and the extra questions relevant to this study. 
 
 ```py
 df1 = pd.read_stata(form1_path)
@@ -49,18 +49,24 @@ df6 = pd.read_stata(form6_path)
 
 df_merged = df1.merge(df6, on="RESPONDENT_ID", how="inner")
 ```
-Once we merged our data, we still retained well over a thousand observations, thus confirming that it is a viable strategy for data collection! After we successfully combined all the data we needed into a single dataframe, we quickly noticed that Sex and Race were often redacted for security purposes. Since it made little sense to impute this information (generally not advised to use imputation in social science research), we decided not to include these two columns in the training of our model. Additionally, by dropping the Sex and Race columns, we clearly focus on a specific responder's Social Network rather than letting the model be influenced by any physiological or cultural differences between responders.
+Once we merged our data, we still retained well over a thousand observations, confirming that it is a viable strategy for data collection! After we successfully combined all the data we needed into a single dataframe, we quickly noticed that Sex and Race were often redacted for security purposes. Since it made little sense to impute this information (which is generally not advised in social science research), we decided not to include these two columns in the training of our model. Additionally, by dropping the Sex and Race columns, we could focus on a specific responder's Social Network rather than letting the model be influenced by any physiological or cultural differences between responders.
 
-Due to this data being available to the public for academic use and the youth of the responders, many of the responses in critical variables were either unusable or redacted. We see this clearly in variables such as political leaning, where a significant portion of responses was "Unsure," "Blank," or "Redacted." As a result, we dropped the observations that did not give a direct response regarding their political leaning.
+Due to this data being available to the public for academic use and the youth of the responders, many of the responses in critical variables were either unusable or redacted. We see this clearly in variables such as political leaning, where a significant portion of responses were "Unsure," "Blank," or "Redacted." As a result, we dropped the observations that did not provide a direct response regarding their political leaning.
 
 Cleaned data: 
+| RESPONDENT_ID | V1_x | V2150       | V49_x    | V2155       | V2156       | V5313       | V5321         
+|---------------|-------|-------------|----------|-------------|-------------|-------------|---------------
+| 50001         | 2023  | FEMALE:(2)  | THREE+:(3) | MARKED:(1)  | MARKED:(1)  | AGREE:(5)   | AGREE:(5)     
+| 50002         | 2023  | FEMALE:(2)  | THREE+:(3) | NT MARKD:(0) | MARKED:(1)  | AGREE:(5)   | MOST AGR:(4)  
+| 50003         | 2023  | MALE:(1)    | TWO:(2)   | NT MARKD:(0) | MARKED:(1)  | AGREE:(5)   | AGREE:(5)     
+| 50004         | 2023  | MALE:(1)    | TWO:(2)   | MARKED:(1)   | MARKED:(1)  | MOST AGR:(4) | DISAGREE:(1)  
+| 50005         | 2023  | MALE:(1)    | THREE+:(3) | MARKED:(1)  | MARKED:(1)  | NEITHER:(3) | DISAGREE:(1)  
 
-
+The dataset above is only an example of the overall dataset that is used the prediction model. 
 
 
 ### Univaritate Analysis
-#### Political belifs distrobution: 
-
+#### Political beliefs distribution:
 <iframe
   src="assets/plot1PB.html"
   width="800"
@@ -68,8 +74,11 @@ Cleaned data:
   frameborder="0"
 ></iframe>
 
-### Bivaritate Analysis
-#### Political beliefs distribution compared to reported loneliness:
+The figure above is a bar chart that shows the total number of people in each category from the survey. The bar chart reflects an intuitive result: most adolescents don't know what their political leanings are. Another interesting observation is that the population of "Moderate" responders far eclipses the "Strong Conservative" and "Strong Liberal" populations, clearly depicting the importance of the "Undecided voter" during elections.
+
+### Bivariate Analysis
+#### Political Beliefs Distribution Compared to Reported Loneliness:
+The survey included a vital variable that allowed people to report how lonely they felt and another variable that quantified their political leaning. With these two variables, we wanted to observe the correlation between them. To do this, we decided to use a heatmap to visually depict any possible tendencies in the data.
 <iframe
   src="assets/plot2HM.html"
   width="800"
@@ -77,6 +86,62 @@ Cleaned data:
   frameborder="0"
 ></iframe>
 
+The heatmap suggests that the vast majority of students do not classify themselves as lonely, and they also don't know what their political leaning is. Based on the heatmap, there are a few details to note. People who self-reported as "Strong Liberals" rarely classified themselves as "Very Lonely" (5) or "Rarely Lonely" (1). Rather, they seemed to be spread out in the middle of the "Loneliness scale." By contrast, people in the "Strong Conservative" and "Conservative" categories tend to be more polarized, with a greater concentration in the "Not Lonely" and "Somewhat Lonely" ranges.
 
-## Model Development 
+#### Sex and Social Netowrks Size (Friends)
+
+Considering these responders are in the 12th grade, it is reasonable to assume that the majority of their social network consists of their friends. Based on this assumption, we conducted a second bivariate analysis to explore how social network strength differed between the two sexes. We did this by isolating a variable that quantified the perceived strength of one's social network and creating a box plot based on the number of people in each category.
+
+<iframe
+  src="assets/plot2HM.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+Based on the figure, we find that females tended to have more established friend groups than males. This is evident from the lower fence of the Self-Reported Social Network Strength in the female category, which is the same as the median in the male category. Despite this, the upper fence for both males and females is 5. This indicates that, on average, both males and females have an established friend group by the 12th grade.
+
+## Interesting findings 
+
+The survey included a vital variable that allowed people to report how lonely they felt and another variable that quantified the strength of a responder's friend group. For most students in the 12th grade, it is reasonable to assume that their social network is largely grounded in their friend groups. Given these two variables, we wanted to observe the correlation between one's perceived social network strength and their self-reported loneliness. To do this in a "Table" format, we used the pandas crosstab function to gain an empirical understanding of how social network strength and loneliness are related.
+
+```py
+pivot_table = pd.crosstab(Alonescale, group_of_friends)
+```
+| Alonescale | 1   | 2   | 3   | 4   | 5   |
+|------------|-----|-----|-----|-----|-----|
+| 1          | 28  | 4   | 6   | 7   | 24  |
+| 2          | 5   | 13  | 5   | 23  | 27  |
+| 3          | 5   | 10  | 69  | 27  | 28  |
+| 4          | 55  | 84  | 67  | 136 | 63  |
+| 5          | 149 | 75  | 66  | 58  | 60  |
+
+
+
+## Framing a Prediction Problem
+
+From the previous sections (especially Figure 2), it is clear that there is some correlation between how lonely people feel and their political leaning. Due to this trend, we want to explore any possible way to predict a student's political leaning using these indicators. This naturally leads us to explore classification algorithms and how we may use multiclass classification to identify a student's political disposition.
+
+Formally, we are trying to use relevant variables that indicate the state of a responder's social network, based on a survey, to train a multiclass classification model. On the micro scale, the algorithm would allow us to predict the political leaning of a single respondent, but on the macro scale, we can observe the sentiment of the entire class as a whole. In order to see how the overall sentiment of 12th graders changes over time, we must focus on the macro scale. Thus, our prediction problem is as follows: **Can we predict the overall political leaning of the class of 12th graders based on each individual's social network state?**
+
+Because the data is constructed in a way that prevents overlaps of conflicting categorical data points, we don't need to modify our cleaned data for the purposes of the baseline model. In line with best model-building practices, we will use a 70-30 split, with 70% for training and the remaining 30% for testing. Since we are using a multiclass classification model, we will evaluate performance using accuracy and the F1 score for simplicity and clarity.
+
+Finally, the training data for the prediction model is as follows:
+
+
+## Baseline Model 
+
+For the baseline Model to used a Random Forest Classifier of the 3 of the featues, <span style="background-color: #ff8c9c80">BR/SRinhouse: </span>, <span style="background-color: #ff8c9c80">Lonely: </span>, and <span style="background-color: #ff8c9c80">WishMoreFrinds: </span>. Using the following three variables made sense at it focued on 3 relevant aspects of a 12th's graders Social Network State.
+
+
+
+## Final Model 
+
+We added the rest of the variables and used Grid Search Cv to find the best tree depth for the model.
+
+
+
+
+
+
 
