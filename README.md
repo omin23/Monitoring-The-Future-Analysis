@@ -43,12 +43,12 @@ Finally, we found 8 relevant variables:
 
 Because of the sheer scope and quantity of questions that the MTF survey contains, there are 7 datasets with a few overlaping questions for every year. For the purpouses of this study we needed to use variables located in two distinct datasets but there was no guarentee that the same people provided infromation for dataset 1 would also appear in dataset 6. Fortunately every obeservation in the datasets had a "Responder ID". Using the ID's of each observation, we were able to use merge both datasets using inner join (based on Responder ID) to get a merged people who responded to both the core questions and the extra questions relevant to this study. 
 
-    ```py
-    df1 = pd.read_stata(form1_path)
-    df6 = pd.read_stata(form6_path)
+```py
+df1 = pd.read_stata(form1_path)
+df6 = pd.read_stata(form6_path)
 
-    df_merged = df1.merge(df6, on="RESPONDENT_ID", how="inner")
-    ```
+df_merged = df1.merge(df6, on="RESPONDENT_ID", how="inner")
+```
 Once we merged our data, we still retained well over a thousand observations, thus confirming that it is a viable strategy for data collection! After we successfully combined all the data we needed into a single dataframe, we quickly noticed that Sex and Race were often redacted for security purposes. Since it made little sense to impute this information (generally not advised to use imputation in social science research), we decided not to include these two columns in the training of our model. Additionally, by dropping the Sex and Race columns, we clearly focus on a specific responder's Social Network rather than letting the model be influenced by any physiological or cultural differences between responders.
 
 Due to this data being available to the public for academic use and the youth of the responders, many of the responses in critical variables were either unusable or redacted. We see this clearly in variables such as political leaning, where a significant portion of responses was "Unsure," "Blank," or "Redacted." As a result, we dropped the observations that did not give a direct response regarding their political leaning.
@@ -68,7 +68,14 @@ Cleaned data:
   frameborder="0"
 ></iframe>
 
-
+### Bivaritate Analysis
+#### Political beliefs distribution compared to reported loneliness:
+<iframe
+  src="assets/plot2HM.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 ## Model Development 
