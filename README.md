@@ -55,13 +55,69 @@ Due to this data being available to the public for academic use and the youth of
 
 Cleaned data: 
 
-| RESPONDENT_ID | V1_x | V2150       | V49_x    | V2155       | V2156       | V5313       | V5321         |
-|---------------|-------|-------------|----------|-------------|-------------|-------------|---------------|
-| 50001         | 2023  | FEMALE:(2)  | THREE+:(3) | MARKED:(1)  | MARKED:(1)  | AGREE:(5)   | AGREE:(5)     |
-| 50002         | 2023  | FEMALE:(2)  | THREE+:(3) | NT MARKD:(0) | MARKED:(1)  | AGREE:(5)   | MOST AGR:(4) | 
-| 50003         | 2023  | MALE:(1)    | TWO:(2)   | NT MARKD:(0) | MARKED:(1)  | AGREE:(5)   | AGREE:(5)     |
-| 50004         | 2023  | MALE:(1)    | TWO:(2)   | MARKED:(1)   | MARKED:(1)  | MOST AGR:(4) | DISAGREE:(1) | 
-| 50005         | 2023  | MALE:(1)    | THREE+:(3) | MARKED:(1)  | MARKED:(1)  | NEITHER:(3) | DISAGREE:(1)  |
+<table style="border: 1px solid black; border-collapse: collapse;">
+  <tr>
+    <th>RESPONDENT_ID</th>
+    <th>V1_x</th>
+    <th>SEX</th>
+    <th>POL_BELIEFS</th>
+    <th>MOTHR_PRES</th>
+    <th>LONELY</th>
+    <th>WISH_MORE_FRNDS</th>
+    <th>USLLY_FRNDS</th>
+  </tr>
+  <tr>
+    <td>50001</td>
+    <td>2023</td>
+    <td>1.0</td>
+    <td>3.0</td>
+    <td>1.0</td>
+    <td>5.0</td>
+    <td>5.0</td>
+    <td>4.0</td>
+  </tr>
+  <tr>
+    <td>50002</td>
+    <td>2023</td>
+    <td>1.0</td>
+    <td>4.0</td>
+    <td>1.0</td>
+    <td>5.0</td>
+    <td>4.0</td>
+    <td>4.0</td>
+  </tr>
+  <tr>
+    <td>50005</td>
+    <td>2023</td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>1.0</td>
+    <td>3.0</td>
+    <td>1.0</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td>50006</td>
+    <td>2023</td>
+    <td>1.0</td>
+    <td>2.0</td>
+    <td>1.0</td>
+    <td>4.0</td>
+    <td>3.0</td>
+    <td>4.0</td>
+  </tr>
+  <tr>
+    <td>50007</td>
+    <td>2023</td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>1.0</td>
+    <td>5.0</td>
+    <td>1.0</td>
+    <td>5.0</td>
+  </tr>
+</table>
+
 
 The dataset above is only an example of the overall dataset that is used the prediction model. 
 
@@ -109,14 +165,60 @@ The survey included a vital variable that allowed people to report how lonely th
 ```py
 pivot_table = pd.crosstab(Alonescale, group_of_friends)
 ```
-
-| Alonescale | 1   | 2   | 3   | 4   | 5   |
-|------------|-----|-----|-----|-----|-----|
-| 1          | 28  | 4   | 6   | 7   | 24  |
-| 2          | 5   | 13  | 5   | 23  | 27  |
-| 3          | 5   | 10  | 69  | 27  | 28  |
-| 4          | 55  | 84  | 67  | 136 | 63  |
-| 5          | 149 | 75  | 66  | 58  | 60  |
+<table style="border: 1px solid black; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid black; padding: 5px;">Alonescale</th>
+      <th style="border: 1px solid black; padding: 5px;">1</th>
+      <th style="border: 1px solid black; padding: 5px;">2</th>
+      <th style="border: 1px solid black; padding: 5px;">3</th>
+      <th style="border: 1px solid black; padding: 5px;">4</th>
+      <th style="border: 1px solid black; padding: 5px;">5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid black; padding: 5px;">1</td>
+      <td style="border: 1px solid black; padding: 5px;">28</td>
+      <td style="border: 1px solid black; padding: 5px;">4</td>
+      <td style="border: 1px solid black; padding: 5px;">6</td>
+      <td style="border: 1px solid black; padding: 5px;">7</td>
+      <td style="border: 1px solid black; padding: 5px;">24</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 5px;">2</td>
+      <td style="border: 1px solid black; padding: 5px;">5</td>
+      <td style="border: 1px solid black; padding: 5px;">13</td>
+      <td style="border: 1px solid black; padding: 5px;">5</td>
+      <td style="border: 1px solid black; padding: 5px;">23</td>
+      <td style="border: 1px solid black; padding: 5px;">27</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 5px;">3</td>
+      <td style="border: 1px solid black; padding: 5px;">5</td>
+      <td style="border: 1px solid black; padding: 5px;">10</td>
+      <td style="border: 1px solid black; padding: 5px;">69</td>
+      <td style="border: 1px solid black; padding: 5px;">27</td>
+      <td style="border: 1px solid black; padding: 5px;">28</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 5px;">4</td>
+      <td style="border: 1px solid black; padding: 5px;">55</td>
+      <td style="border: 1px solid black; padding: 5px;">84</td>
+      <td style="border: 1px solid black; padding: 5px;">67</td>
+      <td style="border: 1px solid black; padding: 5px;">136</td>
+      <td style="border: 1px solid black; padding: 5px;">63</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 5px;">5</td>
+      <td style="border: 1px solid black; padding: 5px;">149</td>
+      <td style="border: 1px solid black; padding: 5px;">75</td>
+      <td style="border: 1px solid black; padding: 5px;">66</td>
+      <td style="border: 1px solid black; padding: 5px;">58</td>
+      <td style="border: 1px solid black; padding: 5px;">60</td>
+    </tr>
+  </tbody>
+</table>
 
 
 ## Framing a Prediction Problem
