@@ -54,13 +54,14 @@ Once we merged our data, we still retained well over a thousand observations, co
 Due to this data being available to the public for academic use and the youth of the responders, many of the responses in critical variables were either unusable or redacted. We see this clearly in variables such as political leaning, where a significant portion of responses were "Unsure," "Blank," or "Redacted." As a result, we dropped the observations that did not provide a direct response regarding their political leaning.
 
 Cleaned data: 
-| RESPONDENT_ID | V1_x | V2150       | V49_x    | V2155       | V2156       | V5313       | V5321         
-|---------------|-------|-------------|----------|-------------|-------------|-------------|---------------
-| 50001         | 2023  | FEMALE:(2)  | THREE+:(3) | MARKED:(1)  | MARKED:(1)  | AGREE:(5)   | AGREE:(5)     
-| 50002         | 2023  | FEMALE:(2)  | THREE+:(3) | NT MARKD:(0) | MARKED:(1)  | AGREE:(5)   | MOST AGR:(4)  
-| 50003         | 2023  | MALE:(1)    | TWO:(2)   | NT MARKD:(0) | MARKED:(1)  | AGREE:(5)   | AGREE:(5)     
-| 50004         | 2023  | MALE:(1)    | TWO:(2)   | MARKED:(1)   | MARKED:(1)  | MOST AGR:(4) | DISAGREE:(1)  
-| 50005         | 2023  | MALE:(1)    | THREE+:(3) | MARKED:(1)  | MARKED:(1)  | NEITHER:(3) | DISAGREE:(1)  
+
+| RESPONDENT_ID | V1_x | V2150       | V49_x    | V2155       | V2156       | V5313       | V5321         |
+|---------------|-------|-------------|----------|-------------|-------------|-------------|---------------|
+| 50001         | 2023  | FEMALE:(2)  | THREE+:(3) | MARKED:(1)  | MARKED:(1)  | AGREE:(5)   | AGREE:(5)     |
+| 50002         | 2023  | FEMALE:(2)  | THREE+:(3) | NT MARKD:(0) | MARKED:(1)  | AGREE:(5)   | MOST AGR:(4) | 
+| 50003         | 2023  | MALE:(1)    | TWO:(2)   | NT MARKD:(0) | MARKED:(1)  | AGREE:(5)   | AGREE:(5)     |
+| 50004         | 2023  | MALE:(1)    | TWO:(2)   | MARKED:(1)   | MARKED:(1)  | MOST AGR:(4) | DISAGREE:(1) | 
+| 50005         | 2023  | MALE:(1)    | THREE+:(3) | MARKED:(1)  | MARKED:(1)  | NEITHER:(3) | DISAGREE:(1)  |
 
 The dataset above is only an example of the overall dataset that is used the prediction model. 
 
@@ -93,7 +94,7 @@ The heatmap suggests that the vast majority of students do not classify themselv
 Considering these responders are in the 12th grade, it is reasonable to assume that the majority of their social network consists of their friends. Based on this assumption, we conducted a second bivariate analysis to explore how social network strength differed between the two sexes. We did this by isolating a variable that quantified the perceived strength of one's social network and creating a box plot based on the number of people in each category.
 
 <iframe
-  src="assets/plot2HM.html"
+  src="assets/plot3BS.html"
   width="800"
   height="600"
   frameborder="0"
