@@ -53,12 +53,9 @@ Finally, we found 8 relevant variables:
 ### Univaritate Analysis
 #### Political belifs distrobution: 
 
-<iframe
-  src="Monitoring-The-Future-Analysis/plot1PB.png"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
+![first plot](Monitoring-The-Future-Analysis/plot1PB.png)
+
+
 
 ## Model Development 
 Once we had an abundance of variables to works with. 
