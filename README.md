@@ -3,23 +3,13 @@ Authors: [Phoebe Yi](pxyi@umich.edu) and [Omkar Nayak](omkarn@umich.edu)
 
 ## Introduction
 
-[Social Network Size](https://www.cmu.edu/common-cold-project/measures-by-study/psychological-and-social-constructs/social-relationships-loneliness-measures/social-integration-network-size.html#:~:text=Number%20of%20People%20in%20Social%20Network%20(Social%20Network%20Size)&text=Accordingly%2C%20social%20network%20size%20is,least%20once%20every%20two%20weeks.)
-(structure) refers to the overall number of relationships one may have. Formally, it mesures the total number of poeople that a person is in
-contant with at least once every two weeks. On the other hand, the quality of social relationships is often refered to as
-[Function](https://link.springer.com/chapter/10.1007/978-3-030-97722-1_2). Most studys on social relationships consider some
-comibnation of both aspects to derrive some insight about some aspect of human behavior. For the purpouse of this study, we will 
-follow the terminoly of the book [Social Networks and Health Inequalities](https://link.springer.com/book/10.1007/978-3-030-97722-1) and 
-refer to the comibnation of both the structural and functional aspects of social relationships as [Social Networks](https://pmc.ncbi.nlm.nih.gov/articles/PMC3150158/).
+[Social Network Size](https://www.cmu.edu/common-cold-project/measures-by-study/psychological-and-social-constructs/social-relationships-loneliness-measures/social-integration-network-size.html#:~:text=Number%20of%20People%20in%20Social%20Network%20(Social%20Network%20Size)&text=Accordingly%2C%20social%20network%20size%20is,least%20once%20every%20two%20weeks.) (structure) refers to the overall number of relationships one may have. Formally, it measures the total number of people that a person is in contact with at least once every two weeks. On the other hand, the quality of social relationships is often referred to as [Function](https://link.springer.com/chapter/10.1007/978-3-030-97722-1_2). Most studies on social relationships consider some combination of both aspects to derive insight into some aspect of human behavior. For the purpose of this study, we will follow the terminology of the book [Social Networks and Health Inequalities](https://link.springer.com/book/10.1007/978-3-030-97722-1) and refer to the combination of both the structural and functional aspects of social relationships as [Social Networks](https://pmc.ncbi.nlm.nih.gov/articles/PMC3150158/).
 
-Monitoring The Future (MTF) is a long runing study conducted by the the Institute of Social Reseach at the Univerisy of Michigan
-that surveys 12th, 10th and 8th grade students. As a result, this survey gathers and maintains critical insights into the 
-behaviors, attitudes, and values of adolescents. The MTF survey has proven instrumental in the development of prevention programmes,
-public health policies and educational campaigns. 
 
-In this study, our central question is **How does the quality and quantity of a person's social interations determine thier Political Leaning**. 
-Here we will use Data Analysis processes to explaore and identify how indicators of loneliness suggest the political disposition of an 
-adolescent. With the following results, we will develop a classification model that predicts the political leaning of an adolescent based on 
-the overall state of the person's Social Network.  
+Monitoring The Future (MTF) is a long-running study conducted by the Institute of Social Research at the University of Michigan that surveys 12th, 10th, and 8th-grade students. As a result, this survey gathers and maintains critical insights into the behaviors, attitudes, and values of adolescents. The MTF survey has proven instrumental in the development of prevention programs, public health policies, and educational campaigns.
+
+In this study, our central question is: **How does the quality and quantity of a person's social interactions determine their Political Leaning?** Here, we will use Data Analysis processes to explore and identify how indicators of loneliness suggest the political disposition of an adolescent. With the following results, we will develop a classification model that predicts the political leaning of an adolescent based on the overall state of the person's Social Network.
+
 
 ## Workflow 
     1. Reseach symptoms of a lack of quality and healthy quality of social interation, ie. loneliness
@@ -48,17 +38,19 @@ Finally, we found 8 relevant variables:
 
 ## Data Cleaning and Exploratory Data Analysis
 
+Because of the nature of this 
 
 
 ### Univaritate Analysis
 #### Political belifs distrobution: 
 
 <iframe
-  src="398_mtf/plot1PB.html"
+  src="Monitoring-The-Future-Analysis/assets/plot1PB.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
 
 
 
