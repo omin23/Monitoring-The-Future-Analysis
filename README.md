@@ -10,15 +10,6 @@ Monitoring The Future (MTF) is a long-running study conducted by the Institute o
 
 In this study, our central question is: **How does the quality and quantity of a person's social interactions determine their Political Leaning?** Here, we will use Data Analysis processes to explore and identify how indicators of loneliness suggest the political disposition of an adolescent. With the following results, we will develop a classification model that predicts the political leaning of an adolescent based on the overall state of the person's Social Network.
 
-
-## Workflow 
-    1. Reseach symptoms of a lack of quality and healthy quality of social interation, ie. loneliness
-    2. Find questions that match up with the symptoms
-    3. Find the most important questions (variables) 
-        3.1 Lasso Regularization
-    4. Build a classification model 
-    5. Analyse the result
-
 ### The Columns 
 In order to find appropriate variables for out analysis, we needed to find the right symptoms 
 to look for in our data. Naturally, this led us to research the symptoms of loneliness. After finding some 
@@ -164,7 +155,7 @@ The survey included a vital variable that allowed people to report how lonely th
 ```py
 pivot_table = pd.crosstab(Alonescale, group_of_friends)
 ```
-<table style="border: 1px solid black; border-collapse: collapse;">
+<table style="border: 1px solid black;">
   <thead>
     <tr>
       <th style="border: 1px solid black; padding: 5px;">Alonescale</th>
@@ -230,18 +221,139 @@ Because the data is constructed in a way that prevents overlaps of conflicting c
 
 Finally, the training data for the prediction model is as follows:
 
+Here is the data converted into an HTML table with black borders:
+
+<table>
+  <tr>
+    <th style="border: 1px solid black; padding: 8px;">SEX</th>
+    <th style="border: 1px solid black; padding: 8px;">POL_BELIEFS</th>
+    <th style="border: 1px solid black; padding: 8px;">...</th>
+    <th style="border: 1px solid black; padding: 8px;">MOTHR_PRES</th>
+    <th style="border: 1px solid black; padding: 8px;">LONELY</th>
+    <th style="border: 1px solid black; padding: 8px;">WISH_MORE_FRNDS</th>
+    <th style="border: 1px solid black; padding: 8px;">USSLY_FRNDS</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">2</td>
+    <td style="border: 1px solid black; padding: 8px;">4</td>
+    <td style="border: 1px solid black; padding: 8px;">...</td>
+    <td style="border: 1px solid black; padding: 8px;">1</td>
+    <td style="border: 1px solid black; padding: 8px;">5</td>
+    <td style="border: 1px solid black; padding: 8px;">5</td>
+    <td style="border: 1px solid black; padding: 8px;">4</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">2</td>
+    <td style="border: 1px solid black; padding: 8px;">5</td>
+    <td style="border: 1px solid black; padding: 8px;">...</td>
+    <td style="border: 1px solid black; padding: 8px;">1</td>
+    <td style="border: 1px solid black; padding: 8px;">5</td>
+    <td style="border: 1px solid black; padding: 8px;">4</td>
+    <td style="border: 1px solid black; padding: 8px;">4</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">1</td>
+    <td style="border: 1px solid black; padding: 8px;">8</td>
+    <td style="border: 1px solid black; padding: 8px;">...</td>
+    <td style="border: 1px solid black; padding: 8px;">1</td>
+    <td style="border: 1px solid black; padding: 8px;">5</td>
+    <td style="border: 1px solid black; padding: 8px;">5</td>
+    <td style="border: 1px solid black; padding: 8px;">4</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">1</td>
+    <td style="border: 1px solid black; padding: 8px;">8</td>
+    <td style="border: 1px solid black; padding: 8px;">...</td>
+    <td style="border: 1px solid black; padding: 8px;">1</td>
+    <td style="border: 1px solid black; padding: 8px;">4</td>
+    <td style="border: 1px solid black; padding: 8px;">1</td>
+    <td style="border: 1px solid black; padding: 8px;">4</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">1</td>
+    <td style="border: 1px solid black; padding: 8px;">1</td>
+    <td style="border: 1px solid black; padding: 8px;">...</td>
+    <td style="border: 1px solid black; padding: 8px;">1</td>
+    <td style="border: 1px solid black; padding: 8px;">3</td>
+    <td style="border: 1px solid black; padding: 8px;">1</td>
+    <td style="border: 1px solid black; padding: 8px;">1</td>
+  </tr>
+</table>
+
 
 ## Baseline Model 
 
-For the baseline Model to used a Random Forest Classifier of the 3 of the featues, <span style="background-color: #ff8c9c80">BR/SRinhouse: </span>, <span style="background-color: #ff8c9c80">Lonely: </span>, and <span style="background-color: #ff8c9c80">WishMoreFrinds: </span>. Using the following three variables made sense at it focued on 3 relevant aspects of a 12th's graders Social Network State: sibilings, friends and slef perception. The RandomForest Classifier also had n_estimators be 100 to ensure that all the different combinations of trees could be used. 
+For the baseline Model to used a Random Forest Classifier of the 3 of the features, <span style="background-color: #ff8c9c80">BR/SRinhouse:</span>, <span style="background-color: #ff8c9c80">Lonely:</span>, and <span style="background-color: #ff8c9c80">WishMoreFriends:</span>. Using the following three variables made sense as it focused on 3 relevant aspects of a 12th grader's Social Network State: siblings, friends, and self perception. The RandomForest Classifier also had n_estimators be 100 to ensure that all the different combinations of trees could be used.
 
-For the first simple model the accuracy was 0.28 or about 28% with a similar F1 score of 0.26 or about 26%. While this may seem low initially, we are trying to classify poeple into 5 catagories. Thus Random in our case is about 20% and we surpass that threshold. Additionally, this is evidnce that   
-
+For the first simple model the accuracy was 0.28 or about 28% with a similar F1 score of 0.26 or about 26%. While this may seem low initially, we are trying to classify people into 5 categories. Thus random choice in our case is about 20% and we surpass that threshold. Additionally, this is evidence that the State of one's Social Network is an indicator for their political leaning, but there needs to be more changes to the model before we can reliably make predictions using the model.
 
 
 ## Final Model 
 
-We added the rest of the variables and used Grid Search Cv to find the best tree depth for the model. 
+For the final model, we had to make some drastic changes. Despite our model giving us a better-than-random probability, the results were not reliable enough to warrant any meaningful utility. To address this, we explored how the RandomForest model works and identified an important feature we could leverage: Ensemble Learning. We realized that the RandomForest model is less sensitive to missing values, as it likely has trees that can derive some results even with missing categories. As a result, we changed our approach to data selection. We used all the columns that had valid inputs for the goal variable "PolBel" but included all other rows, even if their inputs were not "valid." This significantly increased our usable dataset.
+
+First, we wanted to focus on a responder's social network rather than any other possible effects. For instance, whether a responder's father or mother raised them would undoubtedly affect their political leanings. To neutralize this, we combined the "FatherPres" and "MotherPres" columns into a numeric category called "Parents_pres." This numeric variable identified the number of parents a responder had. Additionally, we modified the "Lonely" column. Originally, we converted this categorical variable into a numeric one to process it in the decision tree, but this proved ineffective. To better highlight the influence of each loneliness category, we applied one-hot encoding.
+
+Finally, we achieved an average accuracy of around 73%, which is a significant improvement from the 28% we were working with previously. Additionally, the F1 score increased due to the drop in the number of false negatives. These improved statistics gave us the confidence to move forward with the predictive modeling.
+
+
+
+## Final Results 
+
+In essence, we have solved the micro-prediction problem discussed in Section 3. However, for the macro-decision problem, we had to conduct additional data processing. Specifically, we took the invalid responses to "PolBel" for every year and predicted the political leanings of those responders to get a more holistic view of their overall political preferences. To achieve this, we appended our predicted data for a given year to the "PolBel" series and calculated the average. This approach provided a cohesive view of the political leanings of responders for each year.
+
+By applying this method to data from 2000 to 2023, we uncovered the following table:
+
+<table>
+  <thead>
+    <tr>
+      <th style="border: 1px solid black; padding: 8px;">Year</th>
+      <th style="border: 1px solid black; padding: 8px;">Index</th>
+      <th style="border: 1px solid black; padding: 8px;">Mean</th>
+      <th style="border: 1px solid black; padding: 8px;">Accuracy</th>
+      <th style="border: 1px solid black; padding: 8px;">F1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;">2000</td>
+      <td style="border: 1px solid black; padding: 8px;">0</td>
+      <td style="border: 1px solid black; padding: 8px;">3.05</td>
+      <td style="border: 1px solid black; padding: 8px;">0.77</td>
+      <td style="border: 1px solid black; padding: 8px;">0.75</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;">2001</td>
+      <td style="border: 1px solid black; padding: 8px;">1</td>
+      <td style="border: 1px solid black; padding: 8px;">3.03</td>
+      <td style="border: 1px solid black; padding: 8px;">0.78</td>
+      <td style="border: 1px solid black; padding: 8px;">0.77</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;">2002</td>
+      <td style="border: 1px solid black; padding: 8px;">2</td>
+      <td style="border: 1px solid black; padding: 8px;">3.13</td>
+      <td style="border: 1px solid black; padding: 8px;">0.78</td>
+      <td style="border: 1px solid black; padding: 8px;">0.77</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;">2003</td>
+      <td style="border: 1px solid black; padding: 8px;">3</td>
+      <td style="border: 1px solid black; padding: 8px;">3.06</td>
+      <td style="border: 1px solid black; padding: 8px;">0.71</td>
+      <td style="border: 1px solid black; padding: 8px;">0.69</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;">2004</td>
+      <td style="border: 1px solid black; padding: 8px;">4</td>
+      <td style="border: 1px solid black; padding: 8px;">3.03</td>
+      <td style="border: 1px solid black; padding: 8px;">0.71</td>
+      <td style="border: 1px solid black; padding: 8px;">0.69</td>
+    </tr>
+  </tbody>
+</table>
+
+Finally, we answer the prediction problwem with the following graph:
 
 
 
