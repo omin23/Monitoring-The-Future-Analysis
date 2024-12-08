@@ -120,7 +120,6 @@ The dataset above is only an example of the overall dataset that is used the pre
   height="600"
   frameborder="0"
 ></iframe>
-
 The figure above is a bar chart that shows the total number of people in each category from the survey. The bar chart reflects an intuitive result: most adolescents don't know what their political leanings are. Another interesting observation is that the population of "Moderate" responders far eclipses the "Strong Conservative" and "Strong Liberal" populations, clearly depicting the importance of the "Undecided voter" during elections.
 
 ### Bivariate Analysis
@@ -132,20 +131,17 @@ The survey included a vital variable that allowed people to report how lonely th
   height="600"
   frameborder="0"
 ></iframe>
-
 The heatmap suggests that the vast majority of students do not classify themselves as lonely, and they also don't know what their political leaning is. Based on the heatmap, there are a few details to note. People who self-reported as "Strong Liberals" rarely classified themselves as "Very Lonely" (5) or "Rarely Lonely" (1). Rather, they seemed to be spread out in the middle of the "Loneliness scale." By contrast, people in the "Strong Conservative" and "Conservative" categories tend to be more polarized, with a greater concentration in the "Not Lonely" and "Somewhat Lonely" ranges.
 
 #### Sex and Social Netowrks Size (Friends)
 
 Considering these responders are in the 12th grade, it is reasonable to assume that the majority of their social network consists of their friends. Based on this assumption, we conducted a second bivariate analysis to explore how social network strength differed between the two sexes. We did this by isolating a variable that quantified the perceived strength of one's social network and creating a box plot based on the number of people in each category.
-
 <iframe
   src="assets/plot3BP.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
-
 Based on the figure, we find that females tended to have more established friend groups than males. This is evident from the lower fence of the Self-Reported Social Network Strength in the female category, which is the same as the median in the male category. Despite this, the upper fence for both males and females is 5. This indicates that, on average, both males and females have an established friend group by the 12th grade.
 
 ## Interesting findings 
@@ -353,8 +349,7 @@ By applying this method to data from 2000 to 2023, we uncovered the following ta
   </tbody>
 </table>
 
-Finally, we answer the prediction problwem with the following graph:
-
+**Finally, we answer the prediction problwem with the following graph:**
 <iframe
   src="assets/finalPlot.html"
   width="800"
