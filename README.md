@@ -233,13 +233,15 @@ Finally, the training data for the prediction model is as follows:
 
 ## Baseline Model 
 
-For the baseline Model to used a Random Forest Classifier of the 3 of the featues, <span style="background-color: #ff8c9c80">BR/SRinhouse: </span>, <span style="background-color: #ff8c9c80">Lonely: </span>, and <span style="background-color: #ff8c9c80">WishMoreFrinds: </span>. Using the following three variables made sense at it focued on 3 relevant aspects of a 12th's graders Social Network State.
+For the baseline Model to used a Random Forest Classifier of the 3 of the featues, <span style="background-color: #ff8c9c80">BR/SRinhouse: </span>, <span style="background-color: #ff8c9c80">Lonely: </span>, and <span style="background-color: #ff8c9c80">WishMoreFrinds: </span>. Using the following three variables made sense at it focued on 3 relevant aspects of a 12th's graders Social Network State: sibilings, friends and slef perception. The RandomForest Classifier also had n_estimators be 100 to ensure that all the different combinations of trees could be used. 
+
+For the first simple model the accuracy was 0.28 or about 28% with a similar F1 score of 0.26 or about 26%. While this may seem low initially, we are trying to classify poeple into 5 catagories. Thus Random in our case is about 20% and we surpass that threshold. Additionally, this is evidnce that   
 
 
 
 ## Final Model 
 
-We added the rest of the variables and used Grid Search Cv to find the best tree depth for the model.
+We added the rest of the variables and used Grid Search Cv to find the best tree depth for the model. 
 
 
 
