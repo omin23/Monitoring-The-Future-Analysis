@@ -140,7 +140,7 @@ The heatmap suggests that the vast majority of students do not classify themselv
 Considering these responders are in the 12th grade, it is reasonable to assume that the majority of their social network consists of their friends. Based on this assumption, we conducted a second bivariate analysis to explore how social network strength differed between the two sexes. We did this by isolating a variable that quantified the perceived strength of one's social network and creating a box plot based on the number of people in each category.
 
 <iframe
-  src="assets/plot3BS.html"
+  src="assets/plot3BP.html"
   width="800"
   height="600"
   frameborder="0"
@@ -355,7 +355,12 @@ By applying this method to data from 2000 to 2023, we uncovered the following ta
 
 Finally, we answer the prediction problwem with the following graph:
 
-
+<iframe
+  src="assets/finalPlot.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 
