@@ -16,16 +16,16 @@ inspiration from the litrature, we found the following variables from our data s
 the total collecetions of symptoms we extracted to the available questions asked in the overall dataset.
 Finally, we found 8 relevant variables:
 
-* <span style="background-color: #ff8c9c80">PolBel: </span> A catagorical variable that indicates one's political leaning. The variable we are trying to predict using our classifier. 
-* <span style="background-color: #ff8c9c80">NumSibilings: </span> A numeric variable that identifies of sibilings one has. It allows us to idetify how many poeple of that person's generation they have in thier home life.
-* <span style="background-color: #ff8c9c80">BR/SRinhouse: </span> A boolean value that identifies if one has sibilings in thier house. This allows us to see the effect of multiple sibilings. 
-* <span style="background-color: #ff8c9c80">FatherPres: </span> A boolean variable that identifies wether thier father is present. This allows us to observe an crucial node is an adolecent's Social Network.  
-* <span style="background-color: #ff8c9c80">MotherPres: </span> A boolean variable that identifies wether thier father is present. This allows us to observe an crucial node is an adolecent's Social Network.  
-* <span style="background-color: #ff8c9c80">Lonely: </span> A catagorical variable that identifies how lonley one feels. Among all the variables,the one that is direct and clearly associated with this study. 
-* <span style="background-color: #ff8c9c80">WishMoreFrinds: </span> A catagorical variable that identfies how strongly one feels about wanting to make more friends. Strongly indicates one's Social Network State.
-* <span style="background-color: #ff8c9c80">UsuallyFriends: </span> A catagorical variable that identifies wether one belives they have friends to spend time with. Another strong indicator of how strong the state of one's Social Network is. 
-* <span style="background-color: #ff8c9c80">Sex: </span> A catagorical variable that identifies the Sex of a responder. This will provide us with some extra general information about the responder. 
-* <span style="background-color: #ff8c9c80">Race: </span>A catagorical variable that identifies the Race of a responder. This will provide us with some extra general information about the responder. 
+* **PolBel**:   A catagorical variable that indicates one's political leaning. The variable we are trying to predict using our classifier. 
+* **NumSibilings**:   A numeric variable that identifies of sibilings one has. It allows us to idetify how many poeple of that person's generation they have in thier home life.
+*  **BR/SRinhouse**:   A boolean value that identifies if one has sibilings in thier house. This allows us to see the effect of multiple sibilings. 
+* **FatherPres**:   A boolean variable that identifies wether thier father is present. This allows us to observe an crucial node is an adolecent's Social Network.  
+*  **MotherPres**:   A boolean variable that identifies wether thier father is present. This allows us to observe an crucial node is an adolecent's Social Network.  
+*  **Lonely**:   A catagorical variable that identifies how lonley one feels. Among all the variables,the one that is direct and clearly associated with this study. 
+*  **WishMoreFrinds**:   A catagorical variable that identfies how strongly one feels about wanting to make more friends. Strongly indicates one's Social Network State.
+* **UsuallyFriends**:   A catagorical variable that identifies wether one belives they have friends to spend time with. Another strong indicator of how strong the state of one's Social Network is. 
+*  **Sex**:   A catagorical variable that identifies the Sex of a responder. This will provide us with some extra general information about the responder. 
+*  **Race**:  A catagorical variable that identifies the Race of a responder. This will provide us with some extra general information about the responder. 
 
 
 
@@ -278,14 +278,14 @@ Here is the data converted into an HTML table with black borders:
 
 ## Baseline Model 
 
-For the baseline Model to used a Random Forest Classifier of the 3 of the features, <span style="background-color: #ff8c9c80">BR/SRinhouse:</span>, <span style="background-color: #ff8c9c80">Lonely:</span>, and <span style="background-color: #ff8c9c80">WishMoreFriends:</span>. Using the following three variables made sense as it focused on 3 relevant aspects of a 12th grader's Social Network State: siblings, friends, and self perception. The RandomForest Classifier also had n_estimators be 100 to ensure that all the different combinations of trees could be used.
+For the baseline Model to used a Random Forest Classifier of the 3 of the features, **BR/SRinhouse** ,  **Lonely**, and  **WishMoreFriends** . Using the following three variables made sense as it focused on 3 relevant aspects of a 12th grader's Social Network State: siblings, friends, and self perception. The RandomForest Classifier also had n_estimators be 100 to ensure that all the different combinations of trees could be used.
 
 For the first simple model the accuracy was 0.28 or about 28% with a similar F1 score of 0.26 or about 26%. While this may seem low initially, we are trying to classify people into 5 categories. Thus random choice in our case is about 20% and we surpass that threshold. Additionally, this is evidence that the State of one's Social Network is an indicator for their political leaning, but there needs to be more changes to the model before we can reliably make predictions using the model.
 
 
 ## Final Model 
 
-For the final model, we had to make some drastic changes. Despite our model giving us a better-than-random probability, the results were not reliable enough to warrant any meaningful utility. To address this, we explored how the RandomForest model works and identified an important feature we could leverage: Ensemble Learning. We realized that the RandomForest model is less sensitive to missing values, as it likely has trees that can derive some results even with missing categories. As a result, we changed our approach to data selection. We used all the columns that had valid inputs for the goal variable "PolBel" but included all other rows, even if their inputs were not "valid." This significantly increased our usable dataset.
+For the final model, we had to make some drastic changes. Despite our model giving us a better-than-random probability, the results were not reliable enough to warrant any meaningful utility. To address this, we explored how the RandomForest model works and identified an important feature we could leverage; Ensemble Learning. We realized that the RandomForest model is less sensitive to missing values, as it likely has trees that can derive some results even with missing categories. As a result, we changed our approach to data selection. We used all the columns that had valid inputs for the goal variable "PolBel" but included all other rows, even if their inputs were not "valid." This significantly increased our usable dataset.
 
 First, we wanted to focus on a responder's social network rather than any other possible effects. For instance, whether a responder's father or mother raised them would undoubtedly affect their political leanings. To neutralize this, we combined the "FatherPres" and "MotherPres" columns into a numeric category called "Parents_pres." This numeric variable identified the number of parents a responder had. Additionally, we modified the "Lonely" column. Originally, we converted this categorical variable into a numeric one to process it in the decision tree, but this proved ineffective. To better highlight the influence of each loneliness category, we applied one-hot encoding.
 
