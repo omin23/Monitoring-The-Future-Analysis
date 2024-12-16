@@ -113,12 +113,14 @@ The dataset above is only an example of the overall dataset that is used the pre
 
 ### Univaritate Analysis
 #### Political beliefs distribution:
-<iframe
-  src="assets/plot1PB.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
+<div style="text-align: center;">
+  <iframe
+    src="assets/plot1PB.html"
+    width="800"
+    height="600"
+    frameborder="0"
+  ></iframe>
+</div>
 The figure above is a bar chart that shows the total number of people in each category from the survey. The bar chart reflects an intuitive result: most adolescents don't know what their political leanings are. Another interesting observation is that the population of "Moderate" responders far eclipses the "Strong Conservative" and "Strong Liberal" populations, clearly depicting the importance of the "Undecided voter" during elections.
 
 ### Bivariate Analysis
